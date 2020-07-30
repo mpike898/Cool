@@ -1,102 +1,105 @@
+var yooPage = {}
+var i;
+
 module.exports = {
     beforeEach: browser => {
-        browser.url("https://www.yoodlize.com/")
-            //.waitForElementPresent("#root")
+        yooPage = browser.page.yooPage()
+        yooPage.navigate()
     },
     after: browser=> {
-        browser.end()
+        yooPage.end()
     },
     'Click on every see all element': browser => {
-        browser
-        .useXpath()
-        .waitForElementVisible('//*[contains(@class,"fmVgeN")]')
-        .click('(//div[contains(@class,"fmVgeN")])[1]')
-        .waitForElementVisible('//*[contains(@class,"jSqgxr")]')
-        .verify.containsText('//div[contains(@class,"jSqgxr")]',"Recreational Vehicles")
-        browser.back()
 
-        .waitForElementVisible('//*[contains(@class,"fmVgeN")]')
-        .click('(//div[contains(@class,"fmVgeN")])[2]')
-        .waitForElementVisible('//*[contains(@class,"jSqgxr")]')
-        .verify.containsText('//div[contains(@class,"jSqgxr")]',"Outdoor Gear")
+        yooPage
+        .waitForElementVisible('@seeAll')
+        .click('@seeAll1')
+        .waitForElementVisible('@verifyCata')
+        .verify.containsText('@verifyCata',"Recreational Vehicles")
         browser.back()
-
-        .waitForElementVisible('//*[contains(@class,"fmVgeN")]')
-        .click('(//div[contains(@class,"fmVgeN")])[3]')
-        .waitForElementVisible('//*[contains(@class,"jSqgxr")]')
-        .verify.containsText('//div[contains(@class,"jSqgxr")]',"Electronics")
+        yooPage
+        .waitForElementVisible('@seeAll')
+        .click('@seeAll2')
+        .waitForElementVisible('@verifyCata')
+        .verify.containsText('@verifyCata',"Outdoor Gear")
         browser.back()
-
-        .waitForElementVisible('//*[contains(@class,"fmVgeN")]')
-        .click('(//div[contains(@class,"fmVgeN")])[4]')
-        .waitForElementVisible('//*[contains(@class,"jSqgxr")]')
-        .verify.containsText('//div[contains(@class,"jSqgxr")]',"Party & Wedding Equipment")
+        yooPage
+        .waitForElementVisible('@seeAll')
+        .click('@seeAll3')
+        .waitForElementVisible('@verifyCata')
+        .verify.containsText('@verifyCata',"Electronics")
         browser.back()
-
-        .waitForElementVisible('//*[contains(@class,"fmVgeN")]')
-        .click('(//div[contains(@class,"fmVgeN")])[5]')
-        .waitForElementVisible('//*[contains(@class,"jSqgxr")]')
-        .verify.containsText('//div[contains(@class,"jSqgxr")]',"Tools")
+        yooPage
+        .waitForElementVisible('@seeAll')
+        .click('@seeAll4')
+        .waitForElementVisible('@verifyCata')
+        .verify.containsText('@verifyCata',"Party & Wedding Equipment")
         browser.back()
-
-        .waitForElementVisible('//*[contains(@class,"fmVgeN")]')
-        .click('(//div[contains(@class,"fmVgeN")])[6]')
-        .waitForElementVisible('//*[contains(@class,"jSqgxr")]')
-        .verify.containsText('//div[contains(@class,"jSqgxr")]',"Clothing")
+        yooPage
+        .waitForElementVisible('@seeAll')
+        .click('@seeAll5')
+        .waitForElementVisible('@verifyCata')
+        .verify.containsText('@verifyCata',"Tools")
         browser.back()
-
-        .waitForElementVisible('//*[contains(@class,"fmVgeN")]')
-        .click('(//div[contains(@class,"fmVgeN")])[7]')
-        .waitForElementVisible('//*[contains(@class,"jSqgxr")]')
-        .verify.containsText('//div[contains(@class,"jSqgxr")]',"Home and Kitchen")
+        yooPage
+        .waitForElementVisible('@seeAll')
+        .click('@seeAll6')
+        .waitForElementVisible('@verifyCata')
+        .verify.containsText('@verifyCata',"Clothing")
         browser.back()
-
-        .waitForElementVisible('//*[contains(@class,"fmVgeN")]')
-        .click('(//div[contains(@class,"fmVgeN")])[8]')
-        .waitForElementVisible('//*[contains(@class,"jSqgxr")]')
-        .verify.containsText('//div[contains(@class,"jSqgxr")]',"Toys and Games")
+        yooPage
+        .waitForElementVisible('@seeAll')
+        .click('@seeAll7')
+        .waitForElementVisible('@verifyCata')
+        .verify.containsText('@verifyCata',"Home and Kitchen")
         browser.back()
-
-        .waitForElementVisible('//*[contains(@class,"fmVgeN")]')
-        .click('(//div[contains(@class,"fmVgeN")])[9]')
-        .waitForElementVisible('//*[contains(@class,"jSqgxr")]')
-        .verify.containsText('//div[contains(@class,"jSqgxr")]',"Lawn and Garden")
+        yooPage
+        .waitForElementVisible('@seeAll')
+        .click('@seeAll8')
+        .waitForElementVisible('@verifyCata')
+        .verify.containsText('@verifyCata',"Toys and Games")
         browser.back()
-
-        .waitForElementVisible('//*[contains(@class,"fmVgeN")]')
-        .click('(//div[contains(@class,"fmVgeN")])[10]')
-        .waitForElementVisible('//*[contains(@class,"jSqgxr")]')
-        .verify.containsText('//div[contains(@class,"jSqgxr")]',"Sporting Equipment")
+        yooPage
+        .waitForElementVisible('@seeAll')
+        .click('@seeAll9')
+        .waitForElementVisible('@verifyCata')
+        .verify.containsText('@verifyCata',"Lawn and Garden")
         browser.back()
-
-        .waitForElementVisible('//*[contains(@class,"fmVgeN")]')
-        .click('(//div[contains(@class,"fmVgeN")])[11]')
-        .waitForElementVisible('//*[contains(@class,"jSqgxr")]')
-        .verify.containsText('//div[contains(@class,"jSqgxr")]',"DVDs")
+        yooPage
+        .waitForElementVisible('@seeAll')
+        .click('@seeAll10')
+        .waitForElementVisible('@verifyCata')
+        .verify.containsText('@verifyCata',"Sporting Equipment")
         browser.back()
-
-        .waitForElementVisible('//*[contains(@class,"fmVgeN")]')
-        .click('(//div[contains(@class,"fmVgeN")])[12]')
-        .waitForElementVisible('//*[contains(@class,"jSqgxr")]')
-        .verify.containsText('//div[contains(@class,"jSqgxr")]',"Venues")
+        yooPage
+        .waitForElementVisible('@seeAll')
+        .click('@seeAll11')
+        .waitForElementVisible('@verifyCata')
+        .verify.containsText('@verifyCata',"DVDs")
         browser.back()
-
-        .waitForElementVisible('//*[contains(@class,"fmVgeN")]')
-        .click('(//div[contains(@class,"fmVgeN")])[13]')
-        .waitForElementVisible('//*[contains(@class,"jSqgxr")]')
-        .verify.containsText('//div[contains(@class,"jSqgxr")]',"Music")
+        yooPage
+        .waitForElementVisible('@seeAll')
+        .click('@seeAll12')
+        .waitForElementVisible('@verifyCata')
+        .verify.containsText('@verifyCata',"Venues")
         browser.back()
-
-        .waitForElementVisible('//*[contains(@class,"fmVgeN")]')
-        .click('(//div[contains(@class,"fmVgeN")])[14]')
-        .waitForElementVisible('//*[contains(@class,"jSqgxr")]')
-        .verify.containsText('//div[contains(@class,"jSqgxr")]',"Business Equipment")
+        yooPage
+        .waitForElementVisible('@seeAll')
+        .click('@seeAll13')
+        .waitForElementVisible('@verifyCata')
+        .verify.containsText('@verifyCata',"Music")
         browser.back()
-
-        .waitForElementVisible('//*[contains(@class,"fmVgeN")]')
-        .click('(//div[contains(@class,"fmVgeN")])[15]')
-        .waitForElementVisible('//*[contains(@class,"jSqgxr")]')
-        .verify.containsText('//div[contains(@class,"jSqgxr")]',"Misc")
+        yooPage
+        .waitForElementVisible('@seeAll')
+        .click('@seeAll14')
+        .waitForElementVisible('@verifyCata')
+        .verify.containsText('@verifyCata',"Business Equipment")
+        browser.back()
+        yooPage
+        .waitForElementVisible('@seeAll')
+        .click('@seeAll15')
+        .waitForElementVisible('@verifyCata')
+        .verify.containsText('@verifyCata',"Misc")
         browser.back()
 
         
